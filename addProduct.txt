@@ -1,0 +1,210 @@
+import React, { useState, useEffect } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './addProduct.css';
+
+const AddProduct = () => {
+  const [formData, setFormData] = useState({
+    tytul: '',
+    zdjecie: '',
+    kategoria_id: '',
+    opis: '',
+    miasto_id: '',
+    ulica_id: '',
+    numer_domu: '',
+    termin_waznosci: '',
+    odebrane: false
+  });
+
+  const [previewUrl, setPreviewUrl] = useState('');  // Stan dla podglądu zdjęcia
+  const [categories, setCategories] = useState([]);  // for categories
+  const [cities, setCities] = useState([]);  // for cities
+  const [streets, setStreets] = useState([]);  // for streets
+  const [filteredStreets, setFilteredStreets] = useState([]);  // for filtered streets
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const token = localStorage.getItem('token');
+      const userId = localStorage.getItem('user_id');
+      console.log("User ID:", userId);
+      console.log("Token:", token);
+    }, 400);
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+
+    if (name === 'zdjecie') {
+      setPreviewUrl(value);  // Ustawienie linku do zdjęcia w stanie
+    }
+
+    if (name === 'miasto_id') {
+      const selectedCityId = parseInt(value);
+      const filtered = streets.filter(street => street.miasto_id === selectedCityId);
+      setFilteredStreets(filtered);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const userId = localStorage.getItem('user_id');
+    const dataToSend = { ...formData, uzytkownik_id: userId };
+
+    try {
+      const response = await fetch('http://localhost:5001/ogloszenie', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataToSend)
+      });
+      if (response.ok) {
+        toast.success('Produkt został dodany pomyślnie!');
+        setFormData({
+          tytul: '',
+          zdjecie: '',
+          kategoria_id: '',
+          opis: '',
+          miasto_id: '',
+          ulica_id: '',
+          numer_domu: '',
+          termin_waznosci: '',
+          odebrane: false
+        });
+        setPreviewUrl('');
+      } else {
+        toast.error('Wystąpił błąd podczas dodawania produktu.');
+      }
+    } catch (error) {
+      toast.error('Błąd połączenia z serwerem.');
+    }
+  };
+
+  return (
+    <div className="addProduct">
+      <div className="addProductLeftPart">
+        <div className="titleContainer">
+          <h4>Tytuł</h4>
+          <input
+            type="text"
+            name="tytul"
+            placeholder="Tytuł"
+            value={formData.tytul}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Select for categories */}
+        <div className="categoryFilter">
+          <p>KATEGORIA</p>
+          <select
+            name="kategoria_id"
+            value={formData.kategoria_id}
+            onChange={handleChange}
+          >
+            <option value="">Wybierz kategorię</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>{category.nazwa}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* Select for cities */}
+        <div className="cityFilter">
+          <p>MIASTO</p>
+          <select
+            name="miasto_id"
+            value={formData.miasto_id}
+            onChange={handleChange}
+          >
+            <option value="">Wybierz miasto</option>
+            {cities.map((city) => (
+              <option key={city.id} value={city.id}>{city.nazwa}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* Select for streets */}
+        <div className="streetFilter">
+          <p>ULICA</p>
+          <select
+            name="ulica_id"
+            value={formData.ulica_id}
+            onChange={handleChange}
+          >
+            <option value="">Wybierz ulicę</option>
+            {filteredStreets.map((street) => (
+              <option key={street.id} value={street.id}>{street.nazwa}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="opis">
+          <h4>Opis</h4>
+          <textarea
+            name="opis"
+            placeholder="Opis"
+            value={formData.opis}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+
+        <div className="nrDomu">
+          <h4>Numer domu</h4>
+          <input
+            type="text"
+            name="numer_domu"
+            placeholder="Numer domu"
+            value={formData.numer_domu}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="dataWaznosci">
+          <h4>Data ważności</h4>
+          <input
+            type="datetime-local"
+            name="termin_waznosci"
+            value={formData.termin_waznosci}
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
+
+      <div className="addProductRightPart">
+        <div className="linkDoZdj">
+          <h4>Link do zdjęcia</h4>
+          <input
+            type="text"
+            name="zdjecie"
+            placeholder="Link do zdjęcia"
+            value={formData.zdjecie}
+            onChange={handleChange}
+            required
+          />
+          {previewUrl && (
+            <div className="imagePreview">
+              <img src={previewUrl} alt="Podgląd zdjęcia" className="previewImage" />
+            </div>
+          )}
+        </div>
+
+        <button type="submit" className="addProductBtn" onClick={handleSubmit}>Dodaj ogłoszenie</button>
+      </div>
+
+      <ToastContainer />
+    </div>
+  );
+};
+
+export default AddProduct;
