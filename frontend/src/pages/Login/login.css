@@ -1,0 +1,70 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.stateChangeElement {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 22px;
+}
+
+.login input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    width: 350px;
+    height: 45px;
+    font-size: 16px;
+}
+
+.login input:focus {
+    border: 4px solid #4CAF50;
+}
+
+.bottomContainerPartElement {
+    margin-top: 1.5rem;
+}
+
+.firstPartElement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.forgotPassword {
+    margin-bottom: 1rem;
+}
+
+.submitTypeButton {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 170px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1.25px;
+}
+
+.submitTypeButton:hover {
+    background-color: #45a049;
+}
+
+.stateBtn {
+    cursor: pointer;
+    margin-left: 80px;
+}
+
+.imagePreviewImg {
+    width: 350px;
+    height: auto;
+}

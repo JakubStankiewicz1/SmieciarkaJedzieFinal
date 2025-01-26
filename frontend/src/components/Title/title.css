@@ -1,0 +1,17 @@
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.titleText {
+    color: #72BF78;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.text2 {
+    color: #347928;
+}

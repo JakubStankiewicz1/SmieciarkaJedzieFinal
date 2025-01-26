@@ -1,0 +1,178 @@
+.collection {
+  display: flex;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.filters {
+  width: 25%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.filters p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.categoryFilter,
+.cityFilter {
+  margin-bottom: 20px;
+}
+
+.categoryFilter {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.categoriesContainer p {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.collectionInputElement {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.cityFilter select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.rightPartElement {
+  width: 75%;
+}
+
+.topPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sortContainer p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.sortContainer select {
+  width: 100px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.sortContainerItemsContainer {
+  margin: 20px;
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+}
+
+.productItem {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.productItem img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.productItem h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.productItem p {
+  color: #666;
+}
+
+.allText {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.cityFilter select {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.paginationControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginationControlsBtn {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+ margin: 0 10px;
+}
+
+.pageElement {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.searchFilter {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.searchFilterInput {
+  width: 85%; 
+  padding: 10px 15px;
+  font-size: 16px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.searchFilterCloseIcon {
+  width: auto;
+  height: 25px;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-top: 12px;
+}

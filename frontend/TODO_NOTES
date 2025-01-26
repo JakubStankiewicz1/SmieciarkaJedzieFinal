@@ -1,0 +1,50 @@
+TODO:
+
+
+[X] Strona About
+[X] Strona Contact
+[X] Dodać nową stronę która będzie w ikona_user i będzie wyświetlanie Moje Ogłoszenia (chociaż może to być ten śmietnik)
+[X] Naprawić Collection
+[X] Collection categories
+[X] Collection "Sort By:"
+[X] Collection Zmniejszyć rozmiar elementu filters
+[X] Collection zmniejszyć odległość między elementami
+[X] Collection dodać strony to znaczy że na jednej stronie wyświetlało się tylko 30 elementów (dodać tą zmienną do ShopContext)
+[X] Dodać Product stronę
+[X] Wyświetlać tylko te elementy które mają jeszcze datę ważności >= 0 (reszta ma czarne obranowanie plus coś tam dodać)
+[X] Dodać możliwość dodawanie nowych produktów
+[X] stylizacja kategorii w dodawaniu
+[X] Ulica w dodawaniu
+[X] Dodać opcję logowania
+[X] Dodać opcję rejestracji 
+[X] Dodać usuwanie produktów
+[X] Naprawić newsletterbox
+[X] Zmniejszyć ikonę w navbar underline active
+[X] Wyświetlanie danych o sprzedawcy -> imie nazwisko lokalizacja etc
+[X] Przenieść wszystkie funkcje do ShopContext !!!
+[] Ogólna weryfikacja kodu
+[] Zrobić notatki w kodzie
+[] Zoptymalizować kod
+[X] Dodać opcję rezerwacji produktu
+[X] Zaimplementować cloudinary do publikacji zdjęć
+[] Add latest activity user info
+[X] Dodać wyszukliwanie produktów
+[X] Make about page wider section
+
+[X] Poprawić inputy stylizacyjnie w AddProduct
+[X] Dodać link do ogłoszenia w rezerwacjach
+[X] Update copyright rok
+[] Wysyłanie wiadomości email, dzwonienie w Product
+
+
+[X] Backupowanie !!!!!!!
+[X] Master Slave !!!!!!!
+[X] Szyfrowanie połączenia !!!!!!
+[] Szyfrowanie bazy !!!!!!
+[X] SQL Injection !!!!!!!!
+[X] Zaimplementować Master-Slave
+[] Zabezpieczyć hasła w docker-compose? (jakieś docker secrets może?)
+[] Zauktualizować ERR_Diagram
+[] Przenieś do logowania po rejestracji
+
+MORE "!" -> MORE IMPORTANT

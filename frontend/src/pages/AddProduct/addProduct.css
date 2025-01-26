@@ -1,0 +1,68 @@
+.addProduct {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+input, textarea, select {
+    margin-top: 5px;
+    padding: 10px;
+    width: 330px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #ccc;
+    margin-bottom: 40px;
+}
+
+textarea {
+    height: 80px;
+}
+
+.addProductLeftPart {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.addProductRightPart {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.addProductBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addProductBtn:hover {
+    background-color: #45a049;
+}
+
+.imagePreview {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.previewImage {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}

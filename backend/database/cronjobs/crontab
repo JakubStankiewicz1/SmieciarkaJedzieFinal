@@ -1,0 +1,1 @@
+0 23 * * * root mysql -uroot -pFJM056i2o5A73F8OAI9fmOA467S -e 'FLUSH TABLES WITH READ LOCK; FLUSH LOGS;'; mysqldump -uroot -pFJM056i2o5A73F8OAI9fmOA467S --all-databases > /data/backups/backup_$(date +\%F).sql; mysql -uroot -pFJM056i2o5A73F8OAI9fmOA467S -e 'UNLOCK TABLES'; find /data/backups/ -type f -name "backup_*.sql" -mtime +3 -exec rm {} \;

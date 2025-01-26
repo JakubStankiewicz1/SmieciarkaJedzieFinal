@@ -1,0 +1,331 @@
+.product {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.leftPart {
+  flex: 0.55;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border: 1px solid #000;
+}
+
+.bottomContainerPart {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  right: 1%;
+  bottom: 1%;
+}
+
+.bottomContainerPart img {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+.imageElement {
+  width: 85%;
+  height: auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.imageElement img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.descriptionContainer {
+  position: relative;
+  border: 1px solid #000;
+  padding: 20px;
+  padding-bottom: 60px;
+  min-height: 250px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.descElement {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.idInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: absolute;
+  bottom: 10px;
+  margin-top: 50px;
+  width: 95%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.idInfo hr {
+  margin: 0 0 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.idInfoText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightPartInfo {
+  flex: 0.45;
+  flex-direction: column;
+}
+
+.partOne {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border: 2px solid #000;
+  width: 500px;
+  height: 230px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-left: 20px;
+}
+
+.dataDodania {
+  font-size: 20px;
+  margin: 10px 10px;
+}
+
+.prodctTitle {
+  font-size: 40px;
+  margin: 10px 10px;
+}
+
+.contactSection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 10px;
+}
+
+.callMe {
+  margin-right: 10px;
+}
+
+.contactSection button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.contactSection button:hover {
+  background-color: #0056b3;
+}
+
+.expDate {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fullscreen .imageElement img {
+  width: auto;
+  height: 90%;
+  object-fit: contain;
+}
+
+.authorDetailsContainer {
+  border: 1px solid #000;
+  width: 500px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.authorDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+.authorName {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.authorNameSurnameEle {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.authorDetails img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.authorSince {
+  font-size: 16;
+  font-weight: 500;
+  padding-top: 15px;
+}
+
+.localizationContainer {
+  border: 1px solid #000;
+  width: 500px;
+  margin-left: 20px;
+  margin-top: 20px;
+  height: 130px;
+  padding: 10px;
+}
+
+.localizationContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.locationLeftPart {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.locationText {
+  font-size: 20px;
+}
+
+.cityName {
+  font-size: 18px;
+  padding-top: 10px;
+  font-weight: 500;
+}
+
+.houseAddress {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  padding-top: 8px;
+}
+
+.locationRightPart {
+  display: flex;
+  margin-left: auto;
+}
+
+.locationRightPart img {
+  display: flex;
+  align-self: center;
+}
+
+
+.reservationContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reserveButton {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.reserveButton:not([disabled]) {
+  background-color: #28a745;
+  color: white;
+}
+
+.reserveButton:not([disabled]):hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.reserveButton[disabled] {
+  background-color: #dc3545;
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  color: #ff4d4f;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* kick that shit off */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25%, 75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.errorMessage.animate {
+  animation: shake 0.5s ease-in-out;
+}
+
+.reservationContainer {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+
+.reservationInfo {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #f5c6cb;
+  margin-top: 10px;
+}

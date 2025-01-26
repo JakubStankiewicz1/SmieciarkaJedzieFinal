@@ -1,0 +1,69 @@
+
+services:
+  mysql-master:
+    image: mysql:8.0-debian
+    container_name: mysql-master
+    restart: "no"
+    command: 
+      --server-id=3
+      --log-bin=1
+      --binlog-format=ROW 
+      --binlog-do-db=SmieciarkaJedzie
+      --require-secure-transport=ON
+      --auto-generate-certs=OFF
+      --ssl-ca=/data/certs/ca.pem
+      --ssl-cert=/data/certs/server-cert.pem
+      --ssl-key=/data/certs/server-key.pem
+      --caching-sha2-password-public-key-path=/data/certs/public_key.pem
+      --caching-sha2-password-private-key-path=/data/certs/private_key.pem
+      --early-plugin-load="keyring_file=keyring_file.so"
+      --keyring-file-data=/data/mysql-keyring/keyring
+      --default-table-encryption=ON
+    environment:
+      MYSQL_ROOT_PASSWORD: FJM056i2o5A73F8OAI9fmOA467S
+      MYSQL_DATABASE: SmieciarkaJedzie
+      MYSQL_USER: replication_user
+      MYSQL_PASSWORD: S34nm654gER31No634kFJA74
+    ports:
+      - "3306:3306" 
+    volumes:
+      - ./master-init.sql:/data/master-init.sql
+      - ./certs/server:/data/certs
+      - ./backups:/data/backups
+      - ./cronjobs:/data/cronjobs
+      - ./keyring/master:/data/mysql-keyring
+
+  mysql-slave:
+    image: mysql:8.0-debian
+    container_name: mysql-slave
+    restart: "no"
+    command: 
+      --port=3307
+      --log-bin=1
+      --binlog-format=ROW
+      --binlog-do-db=SmieciarkaJedzie
+      --require-secure-transport=ON
+      --auto-generate-certs=OFF
+      --ssl-ca=/data/certs/ca.pem
+      --ssl-cert=/data/certs/client-cert.pem
+      --ssl-key=/data/certs/client-key.pem
+      --caching-sha2-password-public-key-path=/data/certs/public_key.pem
+      --caching-sha2-password-private-key-path=/data/certs/private_key.pem
+      --server-id=2
+      --early-plugin-load="keyring_file=keyring_file.so"
+      --keyring-file-data=/data/mysql-keyring/keyring
+      --default-table-encryption=ON
+    depends_on:
+      - mysql-master
+    environment:
+      MYSQL_ROOT_PASSWORD: FJM056i2o5A73F8OAI9fmOA467S
+      MYSQL_DATABASE: SmieciarkaJedzie
+      MYSQL_USER: replication_user
+      MYSQL_PASSWORD: S34nm654gER31No634kFJA74
+    ports:
+      - "3307:3307"
+    volumes:
+      - ./certs/client:/data/certs
+      - ./backups:/data/backups
+      - ./keyring/slave:/data/mysql-keyring
+

@@ -1,0 +1,90 @@
+.cart {
+  margin-top: 35px;
+}
+
+.cartHeaderTitle {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.cartListContinaer {
+  display: flex;
+  flex-direction: column;
+}
+
+.CartItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #000;
+  margin-top: 15px;
+}
+
+.shopContainerElements {
+  display: flex;
+  flex-direction: row;
+}
+
+.cartTopPart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartTopPart img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+.cartBottomPart {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.cartTitle {
+  font-size: 26px;
+}
+
+.cartDescription {
+  font-size: 18px;
+}
+
+.BinItemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timeRemaining {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeRemaining p {
+  font-size: 18px;
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+.binIcon {
+  width: 55px;
+  height: auto;
+  cursor: pointer;
+  margin-bottom: 35px;
+  margin-left: 50px;
+}
+
+.editDateContainer input {
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.editDateContainer {
+  margin-top: 10px;
+}
